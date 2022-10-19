@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./ItemListContainer.css";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../asyncMock";
 import { getProductsByCategory } from "../asyncMock"
@@ -39,4 +38,4 @@ const ItemListContainer = ({greetings}) => {
     return <h1 className="greetings">{greetings}</h1> 
 }
 
-export default ItemListContainer
+export default ItemListContainer 

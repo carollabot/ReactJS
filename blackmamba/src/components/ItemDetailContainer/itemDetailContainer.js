@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getProduct } from "../../asyncMock";
+import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/itemList";
-import { useParams } from "react-router-dom"
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState ({})
@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
         }).finally(() => {
             setLoading(false)
         })
-    }, [])
+    })
 
     if(loading) {
         return <h1>Loading...</h1>
@@ -24,6 +24,7 @@ const ItemDetailContainer = () => {
         <div>
             <h2>Detalle de Producto</h2>
             <div>{product?.name}</div>
+            <ItemList products={product} />
         </div>
     )
 }
